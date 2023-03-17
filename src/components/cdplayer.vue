@@ -2,7 +2,7 @@
   <div class="music-player">
     <h2>{{ currentSong.title }}</h2>
     <h4>{{ currentSong.artist }}</h4>
-    <img :src="currentSong.albumCover" alt="" />
+    <img :src="currentSong.albumCover" :alt="currentSong.alt" />
     <div class="controls">
       <button @click="togglePlay">{{ isPlaying ? "暂停" : "播放" }}</button>
       <button @click="stop">停止</button>
@@ -14,16 +14,18 @@
 import { ref, watch } from "vue";
 const songList = ref([
   {
-    title: "Song 1",
-    artist: "JSON01",
-    url: "../assets/suchmos.mp3",
-    albumCover: "../assets/makima.jpg",
+    title: "BurgerKing",
+    artist: "How2Bboss",
+    url: "/src/assets/BurgerKing.mp3",
+    albumCover: "/src/assets/BurgerKing.png",
+    alt: "makima.png",
   },
   {
     title: "Song 2",
     artist: "JSON02",
     url: "../assets/suchmos.mp3",
-    albumCover: "@/assets/album2.png",
+    albumCover: "@/assets/makima.png",
+    alt: "makima.png",
   },
   {
     title: "Song 3",
