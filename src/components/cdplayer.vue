@@ -4,7 +4,7 @@
     <h4>{{ currentSong.artist }}</h4>
     <img :src="currentSong.albumCover" alt="" />
     <div class="controls">
-      <button @click="playOrPause">{{ isPlaying ? "暂停" : "播放" }}</button>
+      <button @click="togglePlay">{{ isPlaying ? "暂停" : "播放" }}</button>
       <button @click="stop">停止</button>
       <button @click="skip">下一曲</button>
     </div>
@@ -13,9 +13,24 @@
 <script setup>
 import { ref, watch } from "vue";
 const songList = ref([
-  { title: "Song 1", artist: "JSON01", url: "../assets/suchmos.mp3" },
-  { title: "Song 2", artist: "JSON02", url: "@/assets/suchmos.mp3" },
-  { title: "Song 3", artist: "JSON03", url: "song3.mp3" },
+  {
+    title: "Song 1",
+    artist: "JSON01",
+    url: "../assets/suchmos.mp3",
+    albumCover: "../assets/makima.jpg",
+  },
+  {
+    title: "Song 2",
+    artist: "JSON02",
+    url: "../assets/suchmos.mp3",
+    albumCover: "@/assets/album2.png",
+  },
+  {
+    title: "Song 3",
+    artist: "JSON03",
+    url: "song3.mp3",
+    albumCover: "../assets/album3.png",
+  },
 ]);
 const currentSong = ref(songList.value[0]);
 const isPlaying = ref(false);
@@ -50,9 +65,11 @@ const skip = () => {
 const loadSong = () => {
   audio.src = currentSong.value.url;
   audio.load();
-  if (isPlaying.value) {
-    audio.play();
-  }
+  audio.onloadeddata = () => {
+    if (isPlaying.value) {
+      audio.play();
+    }
+  };
 };
 
 loadSong();
