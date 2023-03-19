@@ -1,21 +1,56 @@
 <template>
-  <div class="flex h-screen w-screen flex-col justify-center bg-yellow-500">
+  <div
+    class="flex h-screen w-screen flex-col justify-center overflow-hidden bg-yellow-500"
+  >
     <div class="flex flex-col items-center">
       <p class="font-sans text-4xl font-bold">{{ currentSong.title }}</p>
       <p class="pt-3 text-2xl">{{ currentSong.artist }}</p>
     </div>
-    <div class="flex w-full justify-center pt-10 pb-10">
-      <div class="w-4/6 lg:w-auto">
-        <img :src="currentSong.albumCover" :alt="currentSong.alt" />
+    <div class="flex w-full justify-center pt-5 pb-5">
+      <div class="w-4/6 lg:w-2/6">
+        <div class="album-cover" :class="{ 'is-playing': isPlaying }">
+          <img :src="currentSong.albumCover" :alt="currentSong.alt" />
+        </div>
       </div>
     </div>
     <div class="flex w-full flex-row justify-center">
-      <button @click="togglePlay">{{ isPlaying ? "暂停" : "播放" }}</button>
-      <button @click="next">
+      <button @click="previous">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#d0021b"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polygon points="11 19 2 12 11 5 11 19"></polygon>
+          <polygon points="22 19 13 12 22 5 22 19"></polygon>
+        </svg>
+      </button>
+      <button class="pr-5 pl-5" @click="togglePlay">
+        <svg
+          v-if="isPlaying"
+          xmlns="http://www.w3.org/2000/svg"
+          width="33"
+          height="33"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#d0021b"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="6" y="4" width="4" height="16"></rect>
+          <rect x="14" y="4" width="4" height="16"></rect>
+        </svg>
+        <svg
+          v-else
+          xmlns="http://www.w3.org/2000/svg"
+          width="33"
+          height="33"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#d0021b"
@@ -46,7 +81,7 @@
   </div>
 </template>
 <script setup>
-import { ref, watch } from "vue";
+import { ref, watch, computed } from "vue";
 const songList = ref([
   {
     title: "City-original",
@@ -142,6 +177,17 @@ const next = () => {
   loadSong();
 };
 
+const previous = () => {
+  const currentIndex = songList.value.indexOf(currentSong.value);
+  if (currentIndex === 0) {
+    currentSong.value = songList.value[8];
+  } else {
+    currentSong.value = songList.value[currentIndex - 1];
+  }
+  isPlaying.value = true;
+  loadSong();
+};
+
 const loadSong = () => {
   audio.src = currentSong.value.url;
   audio.load();
@@ -152,8 +198,6 @@ const loadSong = () => {
   };
 };
 
-loadSong();
-
 const play = () => {
   audio.play();
 };
@@ -161,7 +205,34 @@ const pause = () => {
   audio.pause();
 };
 
+watch(isPlaying, (newVal) => {
+  const albumCover = document.querySelector(".album-cover");
+  if (newVal) {
+    albumCover.classList.add("is-playing");
+  } else {
+    albumCover.classList.remove("is-playing");
+  }
+});
+
 loadSong();
 </script>
 
-<style scoped></style>
+<style scoped>
+.album-cover {
+  display: inline-block;
+  position: relative;
+}
+
+.album-cover.is-playing img {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
