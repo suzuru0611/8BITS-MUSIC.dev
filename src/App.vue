@@ -10,4 +10,12 @@ import cdplayer from "./components/cdplayer.vue";
   </div>
 </template>
 
-<style></style>
+<style>
+.nes-container.with-title > .title {
+  display: table;
+  padding: 0 0.5rem;
+  margin: -1.8rem 0 1rem;
+  font-size: 1rem;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+</style>

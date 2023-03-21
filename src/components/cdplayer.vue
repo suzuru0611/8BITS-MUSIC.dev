@@ -2,11 +2,38 @@
   <div
     class="flex h-screen w-screen flex-col justify-center overflow-hidden bg-yellow-500"
   >
+    <!-- <section class="nes-container">
+      <section class="message-list">
+        <section class="message -left">
+          <i class="nes-bcrikko"></i>
+          <div class="nes-balloon from-left">
+            <p>Hello NES.css</p>
+          </div>
+        </section>
+
+        <section class="message -right">
+          <div class="nes-balloon from-right">
+            <p>Good morning. Thou hast had a good night's sleep, I hope.</p>
+          </div>
+          <i class="nes-bcrikko"></i>
+        </section>
+      </section>
+    </section> -->
     <div class="flex flex-col items-center">
-      <p class="font-sans text-4xl font-bold">{{ currentSong.title }}</p>
-      <p class="pt-3 text-2xl">{{ currentSong.artist }}</p>
+      <section class="nes-container with-title w-4/6 lg:w-2/6">
+        <h2 class="title">{{ currentSong.artist }}</h2>
+        <p>{{ currentSong.title }}</p>
+      </section>
     </div>
     <div class="flex w-full justify-center pt-5 pb-5">
+      <div class="w-3/6">
+        <p class="nes-balloon from-left nes-pointer">
+          This is suzuru's 8-Bits space, the music part is made by How2Bboss and
+          me, we are a group of people who use Famistudio to make Nintendo-like
+          music
+        </p>
+      </div>
+
       <div class="w-4/6 lg:w-2/6">
         <div class="album-cover" :class="{ 'is-playing': isPlaying }">
           <img :src="currentSong.albumCover" :alt="currentSong.alt" />
@@ -14,7 +41,7 @@
       </div>
     </div>
     <div class="flex w-full flex-row justify-center">
-      <button @click="previous">
+      <button class="pr-2 pl-2" @click="previous">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -30,7 +57,7 @@
           <polygon points="22 19 13 12 22 5 22 19"></polygon>
         </svg>
       </button>
-      <button class="pr-5 pl-5" @click="togglePlay">
+      <button class="pr-2 pl-2" @click="togglePlay">
         <svg
           v-if="isPlaying"
           xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +88,7 @@
           <polygon points="5 3 19 12 5 21 5 3"></polygon>
         </svg>
       </button>
-      <button @click="next">
+      <button class="pr-2 pl-2" @click="next">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -218,6 +245,14 @@ loadSong();
 </script>
 
 <style scoped>
+.nes-container.with-title > .title {
+  display: table;
+  padding: 0 0.5rem;
+  margin: -1.8rem 0 1rem;
+  font-size: 1rem;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
 .album-cover {
   display: inline-block;
   position: relative;
