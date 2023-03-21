@@ -31,8 +31,15 @@
           This is suzuru's 8-Bits space, the music part is made by How2Bboss and
           me, we are a group of people who use Famistudio to make Nintendo-like
           music
+          <i class="nes-jp-logo"></i>
+          <i class="snes-jp-logo"></i>
+          <i class="snes-logo"></i>
         </p>
       </div>
+      <section class="icon-list">
+        <!-- phone -->
+        <i class="nes-smartphone"></i>
+      </section>
 
       <div class="w-4/6 lg:w-2/6">
         <div class="album-cover" :class="{ 'is-playing': isPlaying }">
