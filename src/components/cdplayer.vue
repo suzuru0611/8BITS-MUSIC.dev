@@ -1,15 +1,9 @@
 <template>
   <div
-    class="flex h-screen w-screen flex-col justify-center overflow-hidden bg-yellow-500"
+    class="flex h-screen w-screen items-center justify-center overflow-hidden bg-yellow-500"
   >
-    <div class="flex flex-col items-center">
-      <section class="nes-container with-title w-4/6 lg:w-2/6">
-        <h2 class="title">{{ currentSong.artist }}</h2>
-        <p>{{ currentSong.title }}</p>
-      </section>
-    </div>
     <div class="flex w-full justify-center pt-5 pb-5">
-      <div class="w-3/6">
+      <div>
         <p class="nes-balloon from-left nes-pointer">
           This is suzuru's 8-Bits space, the music part is made by How2Bboss and
           me, we are a group of people who use Famistudio to make Nintendo-like
@@ -23,77 +17,84 @@
         <!-- phone -->
         <i class="nes-smartphone"></i>
       </section>
-
-      <div class="w-4/6 lg:w-2/6">
-        <div class="album-cover" :class="{ 'is-playing': isPlaying }">
+    </div>
+    <div class="align-center flex flex-col">
+      <div class="flex w-full justify-center">
+        <section class="nes-container with-title w-4/6">
+          <h2 class="title">{{ currentSong.artist }}</h2>
+          <p>{{ currentSong.title }}</p>
+        </section>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-4/6" :class="{ 'is-playing': isPlaying }">
           <img :src="currentSong.albumCover" :alt="currentSong.alt" />
         </div>
       </div>
-    </div>
-    <div class="flex w-full flex-row justify-center">
-      <button class="pr-2 pl-2" @click="previous">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#d0021b"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polygon points="11 19 2 12 11 5 11 19"></polygon>
-          <polygon points="22 19 13 12 22 5 22 19"></polygon>
-        </svg>
-      </button>
-      <button class="pr-2 pl-2" @click="togglePlay">
-        <svg
-          v-if="isPlaying"
-          xmlns="http://www.w3.org/2000/svg"
-          width="33"
-          height="33"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#d0021b"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <rect x="6" y="4" width="4" height="16"></rect>
-          <rect x="14" y="4" width="4" height="16"></rect>
-        </svg>
-        <svg
-          v-else
-          xmlns="http://www.w3.org/2000/svg"
-          width="33"
-          height="33"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#d0021b"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polygon points="5 3 19 12 5 21 5 3"></polygon>
-        </svg>
-      </button>
-      <button class="pr-2 pl-2" @click="next">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#d0021b"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polygon points="13 19 22 12 13 5 13 19"></polygon>
-          <polygon points="2 19 11 12 2 5 2 19"></polygon>
-        </svg>
-      </button>
+      <div class="flex w-full flex-row justify-center">
+        <button class="pr-2 pl-2" @click="previous">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#d0021b"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon points="11 19 2 12 11 5 11 19"></polygon>
+            <polygon points="22 19 13 12 22 5 22 19"></polygon>
+          </svg>
+        </button>
+        <button class="pr-2 pl-2" @click="togglePlay">
+          <svg
+            v-if="isPlaying"
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="33"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#d0021b"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+          <svg
+            v-else
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="33"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#d0021b"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+        </button>
+        <button class="pr-2 pl-2" @click="next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#d0021b"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon points="13 19 22 12 13 5 13 19"></polygon>
+            <polygon points="2 19 11 12 2 5 2 19"></polygon>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </template>
