@@ -2,7 +2,7 @@
   <div
     class="flex h-screen w-screen items-center justify-center overflow-hidden bg-yellow-500"
   >
-    <div class="flex w-full justify-center pt-5 pb-5">
+    <div class="flex w-full flex-col justify-center pt-5 pb-5">
       <div>
         <p class="nes-balloon from-left nes-pointer">
           This is suzuru's 8-Bits space, the music part is made by How2Bboss and
@@ -12,6 +12,32 @@
           <i class="snes-jp-logo"></i>
           <i class="snes-logo"></i>
         </p>
+        <section class="message-list">
+          <section class="message -left flex flex-row">
+            <i class="nes-bcrikko"></i>
+            <!-- Balloon -->
+            <div class="nes-balloon from-left">
+              <p>Click The Play Button!!</p>
+            </div>
+          </section>
+
+          <section class="message -right flex flex-row">
+            <!-- Balloon -->
+            <div class="nes-balloon from-right">
+              <p>Hmmmm....Tight,Tight,Tight...Yeah!!!</p>
+            </div>
+            <i class="nes-bcrikko"></i>
+          </section>
+          <section class="message -right flex flex-row">
+            <!-- Balloon -->
+            <div class="nes-balloon from-right">
+              <p>
+                Mario,MegaMen,Sonic! Whatever Man, Just Keep Bringing Me That!
+              </p>
+            </div>
+            <i class="nes-bcrikko"></i>
+          </section>
+        </section>
       </div>
       <section class="icon-list">
         <!-- phone -->
@@ -25,7 +51,7 @@
           <p>{{ currentSong.title }}</p>
         </section>
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center pt-3 pb-3">
         <div class="w-4/6" :class="{ 'is-playing': isPlaying }">
           <img :src="currentSong.albumCover" :alt="currentSong.alt" />
         </div>
