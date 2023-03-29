@@ -1,46 +1,21 @@
 <template>
-  <div
-    class="flex h-screen w-screen flex-row items-center justify-center overflow-hidden bg-yellow-500"
+  <main
+    class="flex h-screen w-screen flex-row items-center overflow-hidden bg-yellow-500"
   >
-    <section class="hidden xl:flex">
-      <p class="nes-balloon from-left nes-pointer">
-        This is suzuru's 8-Bits space, the music part is made by How2Bboss and
-        me, we are a group of people who use Famistudio to make Nintendo-like
-        music
-        <i class="nes-jp-logo"></i>
-        <i class="snes-jp-logo"></i>
-        <i class="snes-logo"></i>
-      </p>
-      <section class="message-list">
-        <section class="message -left flex flex-row">
-          <i class="nes-bcrikko"></i>
-
-          <div class="nes-balloon from-left">
-            <p>Click The Play Button!!</p>
-          </div>
-        </section>
-
-        <section class="message -right flex flex-row">
-          <div class="nes-balloon from-right">
-            <p>Hmmmm....Tight,Tight,Tight...Yeah!!!</p>
-          </div>
-          <i class="nes-bcrikko"></i>
-        </section>
-        <section class="message -right flex flex-row">
-          <div class="nes-balloon from-right">
-            <p>
-              Mario,MegaMen,Sonic! Whatever Man, Just Keep Bringing Me That!
-            </p>
-          </div>
-          <i class="nes-bcrikko"></i>
-        </section>
-      </section>
-      <section class="icon-list">
-        <i class="nes-smartphone"></i>
-      </section>
+    <section class="hidden w-4/6 flex-col xl:flex">
+      <div class="flex flex-col pb-3">
+        <h2>
+          <a href="">#</a>
+          ABOUT
+        </h2>
+        <P>
+          This is suzuru's 8-Bits space, the music part is made by How2Bboss and
+          me, we are a group of people who use Famistudio to make Nintendo-like
+          music
+        </P>
+      </div>
     </section>
-
-    <div class="flex w-full flex-col items-center">
+    <section class="w-full flex-col items-center">
       <div class="flex w-full flex-col items-center">
         <section class="nes-container with-title w-4/6">
           <h2 class="title">{{ currentSong.artist }}</h2>
@@ -48,7 +23,7 @@
         </section>
       </div>
       <div class="flex w-full justify-center pt-5 pb-5">
-        <div class="w-4/6 lg:w-2/6">
+        <div class="w-5/6 md:w-2/6">
           <div class="album-cover" :class="{ 'is-playing': isPlaying }">
             <img :src="currentSong.albumCover" :alt="currentSong.alt" />
           </div>
@@ -119,8 +94,13 @@
           </svg>
         </button>
       </div>
-    </div>
-  </div>
+    </section>
+    <notice class="absolute bottom-5 left-10">
+      <p class="text-[10px] text-yellow-100">
+        Music Copyright © NINTENDO,YMO. All Rights Reserved.
+      </p>
+    </notice>
+  </main>
 </template>
 <script setup>
 import { ref, watch, computed } from "vue";
