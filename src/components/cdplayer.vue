@@ -1,59 +1,57 @@
 <template>
   <div
-    class="flex h-screen w-screen items-center justify-center overflow-hidden bg-yellow-500"
+    class="flex h-screen w-screen flex-row items-center justify-center overflow-hidden bg-yellow-500"
   >
-    <div class="flex w-full flex-col justify-center pt-5 pb-5">
-      <div>
-        <p class="nes-balloon from-left nes-pointer">
-          This is suzuru's 8-Bits space, the music part is made by How2Bboss and
-          me, we are a group of people who use Famistudio to make Nintendo-like
-          music
-          <i class="nes-jp-logo"></i>
-          <i class="snes-jp-logo"></i>
-          <i class="snes-logo"></i>
-        </p>
-        <section class="message-list">
-          <section class="message -left flex flex-row">
-            <i class="nes-bcrikko"></i>
-            <!-- Balloon -->
-            <div class="nes-balloon from-left">
-              <p>Click The Play Button!!</p>
-            </div>
-          </section>
+    <section class="hidden xl:flex">
+      <p class="nes-balloon from-left nes-pointer">
+        This is suzuru's 8-Bits space, the music part is made by How2Bboss and
+        me, we are a group of people who use Famistudio to make Nintendo-like
+        music
+        <i class="nes-jp-logo"></i>
+        <i class="snes-jp-logo"></i>
+        <i class="snes-logo"></i>
+      </p>
+      <section class="message-list">
+        <section class="message -left flex flex-row">
+          <i class="nes-bcrikko"></i>
 
-          <section class="message -right flex flex-row">
-            <!-- Balloon -->
-            <div class="nes-balloon from-right">
-              <p>Hmmmm....Tight,Tight,Tight...Yeah!!!</p>
-            </div>
-            <i class="nes-bcrikko"></i>
-          </section>
-          <section class="message -right flex flex-row">
-            <!-- Balloon -->
-            <div class="nes-balloon from-right">
-              <p>
-                Mario,MegaMen,Sonic! Whatever Man, Just Keep Bringing Me That!
-              </p>
-            </div>
-            <i class="nes-bcrikko"></i>
-          </section>
+          <div class="nes-balloon from-left">
+            <p>Click The Play Button!!</p>
+          </div>
         </section>
-      </div>
+
+        <section class="message -right flex flex-row">
+          <div class="nes-balloon from-right">
+            <p>Hmmmm....Tight,Tight,Tight...Yeah!!!</p>
+          </div>
+          <i class="nes-bcrikko"></i>
+        </section>
+        <section class="message -right flex flex-row">
+          <div class="nes-balloon from-right">
+            <p>
+              Mario,MegaMen,Sonic! Whatever Man, Just Keep Bringing Me That!
+            </p>
+          </div>
+          <i class="nes-bcrikko"></i>
+        </section>
+      </section>
       <section class="icon-list">
-        <!-- phone -->
         <i class="nes-smartphone"></i>
       </section>
-    </div>
-    <div class="align-center flex flex-col">
-      <div class="flex w-full justify-center">
+    </section>
+
+    <div class="flex w-full flex-col items-center">
+      <div class="flex w-full flex-col items-center">
         <section class="nes-container with-title w-4/6">
           <h2 class="title">{{ currentSong.artist }}</h2>
           <p>{{ currentSong.title }}</p>
         </section>
       </div>
-      <div class="flex flex-col items-center pt-3 pb-3">
-        <div class="w-4/6" :class="{ 'is-playing': isPlaying }">
-          <img :src="currentSong.albumCover" :alt="currentSong.alt" />
+      <div class="flex w-full justify-center pt-5 pb-5">
+        <div class="w-4/6 lg:w-2/6">
+          <div class="album-cover" :class="{ 'is-playing': isPlaying }">
+            <img :src="currentSong.albumCover" :alt="currentSong.alt" />
+          </div>
         </div>
       </div>
       <div class="flex w-full flex-row justify-center">
