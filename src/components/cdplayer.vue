@@ -3,27 +3,74 @@
     class="flex h-screen w-screen flex-row items-center overflow-hidden bg-yellow-500"
   >
     <section class="hidden w-4/6 flex-col xl:flex">
-      <div class="flex flex-col pb-3">
-        <h2>
-          <a href="">#</a>
-          ABOUT
-        </h2>
+      <div class="ml-10 flex flex-col">
+        <h4>
+          --------------
+          <i class="snes-jp-logo"></i>
+          --------------
+        </h4>
+        <br />
+        <P> Here is the 8BITS music library </P>
+        <br />
+        <h4>
+          <i class="nes-icon trophy"></i>
+          WHY?
+        </h4>
+        <P> Here is the 8BITS music library </P>
+        <br />
+        <h4>
+          <i class="nes-icon star"></i>
+          MEMBER
+        </h4>
         <P>
-          This is suzuru's 8-Bits space, the music part is made by How2Bboss and
-          me, we are a group of people who use Famistudio to make Nintendo-like
+          we are a group of people who use Famistudio to make Nintendo-like
           music
         </P>
+        <div class="flex flex-nowrap">
+          <section class="nes-container is-dark member-card flex">
+            <img
+              class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+              src="/src/assets/suzuru_icon.jpg"
+              alt=""
+            />
+            <div class="ml-3 mr-2 flex w-40 flex-col">
+              <h4>suzuru</h4>
+              <p class="text-[10px]">web,ill,music</p>
+            </div>
+          </section>
+          <section class="nes-container is-dark member-card flex">
+            <img
+              class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+              src="/src/assets/boss_icon.jpg"
+              alt=""
+            />
+            <div class="ml-3 mr-2 flex w-40 flex-col">
+              <h4>How2Bboss</h4>
+              <p class="text-[10px]">music</p>
+            </div>
+          </section>
+        </div>
+        <br />
+
+        <h4>
+          <i class="nes-icon trophy"></i>
+          MORE...
+        </h4>
+        <P> Here is the 8BITS music library </P>
+        <section class="nes-container is-dark member-card flex"></section>
+        <br />
+        -----------------------------------
       </div>
     </section>
     <section class="w-full flex-col items-center">
       <div class="flex w-full flex-col items-center">
-        <section class="nes-container with-title w-4/6">
+        <section class="nes-container with-title w-4/6 md:w-3/6">
           <h2 class="title">{{ currentSong.artist }}</h2>
           <p>{{ currentSong.title }}</p>
         </section>
       </div>
       <div class="flex w-full justify-center pt-5 pb-5">
-        <div class="w-5/6 md:w-2/6">
+        <div class="w-5/6 md:w-3/6">
           <div class="album-cover" :class="{ 'is-playing': isPlaying }">
             <img :src="currentSong.albumCover" :alt="currentSong.alt" />
           </div>
