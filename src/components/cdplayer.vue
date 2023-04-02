@@ -3,7 +3,7 @@
     class="flex h-screen w-screen flex-row items-center overflow-hidden bg-yellow-500"
   >
     <section class="hidden w-4/6 flex-col xl:flex">
-      <div class="ml-10 flex flex-col">
+      <div class="ml-12 flex flex-col">
         <h4>
           --------------
           <i class="snes-jp-logo"></i>
@@ -16,16 +16,13 @@
           <i class="nes-icon trophy"></i>
           WHY?
         </h4>
-        <P> Here is the 8BITS music library </P>
+        <P> Want to store your work in an interesting way </P>
         <br />
         <h4>
           <i class="nes-icon star"></i>
           MEMBER
         </h4>
-        <P>
-          we are a group of people who use Famistudio to make Nintendo-like
-          music
-        </P>
+        <P> Thanks for the music provided by How2Bboss</P>
         <div class="flex flex-nowrap">
           <section class="nes-container is-dark member-card flex">
             <img
@@ -53,10 +50,10 @@
         <br />
 
         <h4>
-          <i class="nes-icon trophy"></i>
+          <i class="nes-icon coin"></i>
           MORE...
         </h4>
-        <P> Here is the 8BITS music library </P>
+        <P> Other works by SUZURU </P>
         <section class="nes-container is-dark member-card flex"></section>
         <br />
         -----------------------------------
@@ -142,7 +139,7 @@
         </button>
       </div>
     </section>
-    <notice class="absolute bottom-5 left-10">
+    <notice class="absolute bottom-5 left-12">
       <p class="text-[10px] text-yellow-100">
         Music Copyright © NINTENDO,YMO. All Rights Reserved.
       </p>
