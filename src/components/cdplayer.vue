@@ -148,69 +148,87 @@
 </template>
 <script setup>
 import { ref, watch, computed } from "vue";
-import 
+import city_png from "/src/assets/City.png";
+import city_mp3 from "/src/assets/City.mp3";
+import burgerKing_png from "/src/assets/BurgerKing.png";
+import burgerKing_mp3 from "/src/assets/BurgerKing.mp3";
+import Mario_png from "/src/assets/Mario.png";
+import Mario_mp3 from "/src/assets/Mario.mp3";
+import Sonic_png from "/src/assets/Sonic.png";
+import Sonic_mp3 from "/src/assets/Sonic.mp3";
+import MegaMen_png from "/src/assets/MegaMen.png";
+import MegaMen_mp3 from "/src/assets/MegaMen.mp3";
+import Toasty_png from "/src/assets/Toasty.png";
+import Toasty_mp3 from "/src/assets/Toasty.mp3";
+import Splatoon_png from "/src/assets/Splatoon.png";
+import Splatoon_mp3 from "/src/assets/Splatoon.mp3";
+import Village_png from "/src/assets/Village.png";
+import Village_mp3 from "/src/assets/Village.mp3";
+import Rydeen_png from "/src/assets/Rydeen.png";
+import Rydeen_mp3 from "/src/assets/Rydeen.mp3";
+
 const songList = ref([
   {
     title: "City-original",
     artist: "How2Bboss",
-    url: "/src/assets/City.mp3",
-    albumCover: "/src/assets/City.png",
+    url: city_mp3,
+    albumCover: city_png,
     alt: "City.png",
   },
   {
     title: "BurgerKing-remix",
     artist: "How2Bboss",
-    url: "/src/assets/BurgerKing.mp3",
-    albumCover: "/src/assets/BurgerKing.png",
+    url: burgerKing_mp3,
+    albumCover: burgerKing_png,
     alt: "BurgerKing.png",
   },
   {
     title: "Mario-remix",
     artist: "How2Bboss",
-    url: "/src/assets/Mario.mp3",
-    albumCover: "/src/assets/Mario.png",
+    url: Mario_mp3,
+    albumCover: Mario_png,
     alt: "Mario.png",
   },
   {
     title: "Sonic-remix",
     artist: "How2Bboss",
-    url: "/src/assets/Sonic.mp3",
-    albumCover: "/src/assets/Sonic.png",
+    url: Sonic_mp3,
+    albumCover: Sonic_png,
     alt: "Sonic.png",
   },
   {
     title: "MegaMen-remix",
     artist: "How2Bboss",
-    url: "/src/assets/MegaMen.mp3",
-    albumCover: "/src/assets/MegaMen.png",
+    url: MegaMen_mp3,
+    albumCover: MegaMen_png,
     alt: "MegaMen.png",
   },
   {
     title: "Toasty-original",
     artist: "How2Bboss",
-    url: "/src/assets/Toasty.mp3",
-    albumCover: "/src/assets/Toasty.png",
+    url: Toasty_mp3,
+    albumCover: Toasty_png,
     alt: "Toasty.png",
   },
   {
     title: "Splatoon-remix",
     artist: "SUZURU",
-    url: "/src/assets/Splatoon.mp3",
-    albumCover: "/src/assets/Splatoon.png",
+    url: Splatoon_mp3,
+    albumCover: Splatoon_png,
     alt: "Splatoon.png",
   },
   {
     title: "Village-original",
     artist: "How2Bboss",
-    url: "/src/assets/Village.mp3",
-    albumCover: "/src/assets/Village.png",
+    url: Village_mp3,
+    albumCover: Village_png,
     alt: "Village.png",
   },
   {
     title: "Rydeen-remix",
     artist: "SUZURU",
-    url: "/src/assets/Rydeen.mp3",
-    albumCover: "/src/assets/Rydeen.png",
+    url: Rydeen_mp3,
+    albumCover: Rydeen_png,
     alt: "Rydeen.png",
   },
 ]);
