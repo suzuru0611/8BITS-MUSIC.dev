@@ -1,167 +1,169 @@
 <template>
-  <main
-    class="flex h-screen w-screen flex-row items-center overflow-hidden bg-yellow-500 leading-loose tracking-wide"
-  >
-    <section class="hidden w-4/6 flex-col xl:flex">
-      <div class="ml-[10rem] flex flex-col">
-        <div class="py-5">
-          <h4>
-            -------------
-            <i class="snes-jp-logo"></i>
-            -------------
-          </h4>
-          <P> Here is the 8BITS music library </P>
-        </div>
-        <div>
-          <h4>
-            <i class="nes-icon trophy"></i>
-            WHY?
-          </h4>
-          <P>
-            We will start to make 8BIT music, mainly because we like Nintendo
-            games, so we start to create related music, and finally want to
-            store your works in an interesting way, here are not only
-            Nintendo-related creations, but also other types of 8BITS Music
-            adaptation, hope you like it.
-          </P>
-        </div>
-        <div class="py-5">
-          <h4>
-            <i class="nes-icon star"></i>
-            MEMBER
-          </h4>
-          <P>
-            Most of the music here is provided by How2Bboss, I am responsible
-            for a small part of the music and the rest of the programming and so
-            on, this website would not be possible without him, thank you very
-            much for his selfless help.
-          </P>
-          <div class="pd-4 flex flex-nowrap pt-5">
-            <section class="nes-container is-dark member-card flex">
-              <img
-                class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                src="/src/assets/suzuru_icon.jpg"
-                alt=""
-              />
-              <div class="ml-3 mr-2 flex w-40 flex-col">
-                <h4>suzuru</h4>
-                <p class="text-[10px]">web,ill,music</p>
-              </div>
+  <div class="items-center bg-yellow-500">
+    <main class="flex min-h-[100vh] items-center leading-loose tracking-wide">
+      <section class="hidden w-4/6 flex-col 2xl:flex">
+        <div class="ml-[10rem] flex flex-col">
+          <div class="py-5">
+            <h4>
+              -------------
+              <i class="snes-jp-logo"></i>
+              -------------
+            </h4>
+            <P> Here is the 8BITS music library </P>
+          </div>
+          <div>
+            <h4>
+              <i class="nes-icon trophy"></i>
+              WHY?
+            </h4>
+            <P>
+              We will start to make 8BIT music, mainly because we like Nintendo
+              games, so we start to create related music, and finally want to
+              store your works in an interesting way, here are not only
+              Nintendo-related creations, but also other types of 8BITS Music
+              adaptation, hope you like it.
+            </P>
+          </div>
+          <div class="py-5">
+            <h4>
+              <i class="nes-icon star"></i>
+              MEMBER
+            </h4>
+            <P>
+              Most of the music here is provided by How2Bboss, I am responsible
+              for a small part of the music and the rest of the programming and
+              so on, this website would not be possible without him, thank you
+              very much for his selfless help.
+            </P>
+            <div class="pd-4 flex flex-nowrap pt-5">
+              <section class="nes-container is-dark member-card flex">
+                <img
+                  class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                  src="/src/assets/suzuru_icon.jpg"
+                  alt=""
+                />
+                <div class="ml-3 mr-2 flex w-40 flex-col">
+                  <h4>suzuru</h4>
+                  <p class="text-[10px]">web,ill,music</p>
+                </div>
+              </section>
+              <section class="nes-container is-dark member-card flex">
+                <img
+                  class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                  src="/src/assets/boss_icon.jpg"
+                  alt=""
+                />
+                <div class="ml-3 mr-2 flex w-40 flex-col">
+                  <h4>How2Bboss</h4>
+                  <p class="text-[10px]">music</p>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="py-5">
+            <h4>
+              <i class="nes-icon coin"></i>
+              MORE...
+            </h4>
+            <P> Other works by SUZURU </P>
+            <section class="flex flex-row">
+              <a href="https://suzuru0611.github.io/SUZURU/">
+                <div>SUZURU MAIN WEBSITE</div>
+              </a>
             </section>
-            <section class="nes-container is-dark member-card flex">
-              <img
-                class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                src="/src/assets/boss_icon.jpg"
-                alt=""
-              />
-              <div class="ml-3 mr-2 flex w-40 flex-col">
-                <h4>How2Bboss</h4>
-                <p class="text-[10px]">music</p>
-              </div>
-            </section>
+            --------------------------------
           </div>
         </div>
-        <div class="py-5">
-          <h4>
-            <i class="nes-icon coin"></i>
-            MORE...
-          </h4>
-          <P> Other works by SUZURU </P>
-          <section class="flex flex-row">
-            <a href="https://suzuru0611.github.io/SUZURU/">
-              <div>SUZURU MAIN WEBSITE</div>
-            </a>
+      </section>
+      <section class="w-full flex-col items-center md:p-0">
+        <div class="flex w-full flex-col items-center">
+          <section class="nes-container with-title w-4/6 md:w-3/6">
+            <h2 class="title">{{ currentSong.artist }}</h2>
+            <p>{{ currentSong.title }}</p>
           </section>
-          --------------------------------
         </div>
-      </div>
-    </section>
-    <section class="w-full flex-col items-center">
-      <div class="flex w-full flex-col items-center">
-        <section class="nes-container with-title w-4/6 md:w-3/6">
-          <h2 class="title">{{ currentSong.artist }}</h2>
-          <p>{{ currentSong.title }}</p>
-        </section>
-      </div>
-      <div class="flex w-full justify-center pt-5 pb-5">
-        <div class="w-5/6 md:w-3/6">
-          <div class="album-cover" :class="{ 'is-playing': isPlaying }">
-            <img :src="currentSong.albumCover" :alt="currentSong.alt" />
+        <div class="flex w-full justify-center pt-5 pb-5">
+          <div class="w-5/6 md:w-3/6">
+            <div class="album-cover" :class="{ 'is-playing': isPlaying }">
+              <img :src="currentSong.albumCover" :alt="currentSong.alt" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="flex w-full flex-row justify-center">
-        <button class="pr-2 pl-2" @click="previous">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#d0021b"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polygon points="11 19 2 12 11 5 11 19"></polygon>
-            <polygon points="22 19 13 12 22 5 22 19"></polygon>
-          </svg>
-        </button>
-        <button class="pr-2 pl-2" @click="togglePlay">
-          <svg
-            v-if="isPlaying"
-            xmlns="http://www.w3.org/2000/svg"
-            width="33"
-            height="33"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#d0021b"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <rect x="6" y="4" width="4" height="16"></rect>
-            <rect x="14" y="4" width="4" height="16"></rect>
-          </svg>
-          <svg
-            v-else
-            xmlns="http://www.w3.org/2000/svg"
-            width="33"
-            height="33"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#d0021b"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
-        </button>
-        <button class="pr-2 pl-2" @click="next">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#d0021b"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polygon points="13 19 22 12 13 5 13 19"></polygon>
-            <polygon points="2 19 11 12 2 5 2 19"></polygon>
-          </svg>
-        </button>
-      </div>
-    </section>
-    <notice class="absolute bottom-5 left-[2rem] xl:left-[10rem]">
+        <div class="flex w-full flex-row justify-center">
+          <button class="pr-2 pl-2" @click="previous">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#d0021b"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="11 19 2 12 11 5 11 19"></polygon>
+              <polygon points="22 19 13 12 22 5 22 19"></polygon>
+            </svg>
+          </button>
+          <button class="pr-2 pl-2" @click="togglePlay">
+            <svg
+              v-if="isPlaying"
+              xmlns="http://www.w3.org/2000/svg"
+              width="33"
+              height="33"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#d0021b"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+            <svg
+              v-else
+              xmlns="http://www.w3.org/2000/svg"
+              width="33"
+              height="33"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#d0021b"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </button>
+          <button class="pr-2 pl-2" @click="next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#d0021b"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="13 19 22 12 13 5 13 19"></polygon>
+              <polygon points="2 19 11 12 2 5 2 19"></polygon>
+            </svg>
+          </button>
+        </div>
+      </section>
+    </main>
+    <notice
+      class="absolute bottom-[1rem] left-[3rem] xl:bottom-[2rem] xl:left-[10rem]"
+    >
       <p class="text-[10px] text-yellow-100">
         Music Copyright © NINTENDO,YMO. All Rights Reserved.
       </p>
     </notice>
-  </main>
+  </div>
 </template>
 <script setup>
 import { ref, watch, computed } from "vue";
