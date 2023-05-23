@@ -1,62 +1,79 @@
 <template>
   <main
-    class="flex h-screen w-screen flex-row items-center overflow-hidden bg-yellow-500"
+    class="flex h-screen w-screen flex-row items-center overflow-hidden bg-yellow-500 leading-loose tracking-wide"
   >
     <section class="hidden w-4/6 flex-col xl:flex">
-      <div class="ml-12 flex flex-col">
-        <h4>
-          --------------
-          <i class="snes-jp-logo"></i>
-          --------------
-        </h4>
-        <br />
-        <P> Here is the 8BITS music library </P>
-        <br />
-        <h4>
-          <i class="nes-icon trophy"></i>
-          WHY?
-        </h4>
-        <P> Want to store your work in an interesting way </P>
-        <br />
-        <h4>
-          <i class="nes-icon star"></i>
-          MEMBER
-        </h4>
-        <P> Thanks for the music provided by How2Bboss</P>
-        <div class="flex flex-nowrap">
-          <section class="nes-container is-dark member-card flex">
-            <img
-              class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src="/src/assets/suzuru_icon.jpg"
-              alt=""
-            />
-            <div class="ml-3 mr-2 flex w-40 flex-col">
-              <h4>suzuru</h4>
-              <p class="text-[10px]">web,ill,music</p>
-            </div>
-          </section>
-          <section class="nes-container is-dark member-card flex">
-            <img
-              class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src="/src/assets/boss_icon.jpg"
-              alt=""
-            />
-            <div class="ml-3 mr-2 flex w-40 flex-col">
-              <h4>How2Bboss</h4>
-              <p class="text-[10px]">music</p>
-            </div>
-          </section>
+      <div class="ml-[10rem] flex flex-col">
+        <div class="py-5">
+          <h4>
+            -------------
+            <i class="snes-jp-logo"></i>
+            -------------
+          </h4>
+          <P> Here is the 8BITS music library </P>
         </div>
-        <br />
-
-        <h4>
-          <i class="nes-icon coin"></i>
-          MORE...
-        </h4>
-        <P> Other works by SUZURU </P>
-        <section class="nes-container is-dark member-card flex"></section>
-        <br />
-        -----------------------------------
+        <div>
+          <h4>
+            <i class="nes-icon trophy"></i>
+            WHY?
+          </h4>
+          <P>
+            We will start to make 8BIT music, mainly because we like Nintendo
+            games, so we start to create related music, and finally want to
+            store your works in an interesting way, here are not only
+            Nintendo-related creations, but also other types of 8BITS Music
+            adaptation, hope you like it.
+          </P>
+        </div>
+        <div class="py-5">
+          <h4>
+            <i class="nes-icon star"></i>
+            MEMBER
+          </h4>
+          <P>
+            Most of the music here is provided by How2Bboss, I am responsible
+            for a small part of the music and the rest of the programming and so
+            on, this website would not be possible without him, thank you very
+            much for his selfless help.
+          </P>
+          <div class="pd-4 flex flex-nowrap pt-5">
+            <section class="nes-container is-dark member-card flex">
+              <img
+                class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                src="/src/assets/suzuru_icon.jpg"
+                alt=""
+              />
+              <div class="ml-3 mr-2 flex w-40 flex-col">
+                <h4>suzuru</h4>
+                <p class="text-[10px]">web,ill,music</p>
+              </div>
+            </section>
+            <section class="nes-container is-dark member-card flex">
+              <img
+                class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                src="/src/assets/boss_icon.jpg"
+                alt=""
+              />
+              <div class="ml-3 mr-2 flex w-40 flex-col">
+                <h4>How2Bboss</h4>
+                <p class="text-[10px]">music</p>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="py-5">
+          <h4>
+            <i class="nes-icon coin"></i>
+            MORE...
+          </h4>
+          <P> Other works by SUZURU </P>
+          <section class="flex flex-row">
+            <a href="https://suzuru0611.github.io/SUZURU/">
+              <div>SUZURU MAIN WEBSITE</div>
+            </a>
+          </section>
+          --------------------------------
+        </div>
       </div>
     </section>
     <section class="w-full flex-col items-center">
@@ -139,7 +156,7 @@
         </button>
       </div>
     </section>
-    <notice class="absolute bottom-5 left-12">
+    <notice class="absolute bottom-5 left-[2rem] xl:left-[10rem]">
       <p class="text-[10px] text-yellow-100">
         Music Copyright © NINTENDO,YMO. All Rights Reserved.
       </p>
