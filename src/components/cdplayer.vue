@@ -1,6 +1,8 @@
 <template>
   <div class="items-center bg-yellow-500">
-    <main class="flex min-h-[100vh] items-center leading-loose tracking-wide">
+    <main
+      class="flex min-h-[110vh] items-center py-[8rem] leading-loose tracking-wide xl:min-h-[100vh]"
+    >
       <section class="hidden w-4/6 flex-col 2xl:flex">
         <div class="ml-[10rem] flex flex-col">
           <div class="py-5">
@@ -155,10 +157,15 @@
           </button>
         </div>
       </section>
+      <notice
+        class="absolute bottom-[3rem] hidden 2xl:left-[8rem] 2xl:bottom-[3rem] 2xl:flex"
+      >
+        <p class="text-[10px] text-yellow-100">
+          Music Copyright © NINTENDO,YMO. All Rights Reserved.
+        </p>
+      </notice>
     </main>
-    <notice
-      class="absolute bottom-[1rem] left-[3rem] xl:bottom-[2rem] xl:left-[10rem]"
-    >
+    <notice class="flex bg-yellow-500 pl-[2rem] pb-[2rem] 2xl:hidden">
       <p class="text-[10px] text-yellow-100">
         Music Copyright © NINTENDO,YMO. All Rights Reserved.
       </p>
