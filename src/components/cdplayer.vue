@@ -1,8 +1,6 @@
 <template>
   <div class="items-center bg-yellow-500">
-    <main
-      class="flex min-h-[110vh] items-center py-[8rem] leading-loose tracking-wide xl:min-h-[100vh]"
-    >
+    <main class="flex min-h-[110vh] items-center py-[8rem] leading-loose tracking-wide xl:min-h-[100vh]">
       <section class="hidden w-4/6 flex-col 2xl:flex">
         <div class="ml-[10rem] flex flex-col">
           <div class="py-5">
@@ -39,22 +37,16 @@
             </P>
             <div class="pd-4 flex flex-nowrap pt-5">
               <section class="nes-container is-dark member-card flex">
-                <img
-                  class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                  src="/src/assets/suzuru_icon.jpg"
-                  alt=""
-                />
+                <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" src="/src/assets/suzuru_icon.jpg"
+                  alt="" />
                 <div class="ml-3 mr-2 flex w-40 flex-col">
                   <h4>suzuru</h4>
                   <p class="text-[10px]">web,ill,music</p>
                 </div>
               </section>
               <section class="nes-container is-dark member-card flex">
-                <img
-                  class="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                  src="/src/assets/boss_icon.jpg"
-                  alt=""
-                />
+                <img class="inline-block h-12 w-12 rounded-full ring-2 ring-white" src="/src/assets/boss_icon.jpg"
+                  alt="" />
                 <div class="ml-3 mr-2 flex w-40 flex-col">
                   <h4>How2Bboss</h4>
                   <p class="text-[10px]">music</p>
@@ -92,78 +84,33 @@
           </div>
         </div>
         <div class="flex w-full flex-row justify-center">
-          <button class="pr-2 pl-2" @click="previous">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#d0021b"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+          <button class="mx-2 px-1" @click="previous">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#d0021b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="11 19 2 12 11 5 11 19"></polygon>
               <polygon points="22 19 13 12 22 5 22 19"></polygon>
             </svg>
           </button>
-          <button class="pr-2 pl-2" @click="togglePlay">
-            <svg
-              v-if="isPlaying"
-              xmlns="http://www.w3.org/2000/svg"
-              width="33"
-              height="33"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#d0021b"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+          <button class="mx-2 px-1" @click="togglePlay">
+            <svg v-if="isPlaying" xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24"
+              fill="none" stroke="#d0021b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="6" y="4" width="4" height="16"></rect>
               <rect x="14" y="4" width="4" height="16"></rect>
             </svg>
-            <svg
-              v-else
-              xmlns="http://www.w3.org/2000/svg"
-              width="33"
-              height="33"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#d0021b"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+            <svg v-else xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 24 24" fill="none"
+              stroke="#d0021b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="5 3 19 12 5 21 5 3"></polygon>
             </svg>
           </button>
-          <button class="pr-2 pl-2" @click="next">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#d0021b"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+          <button class="mx-2 px-1" @click="next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#d0021b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="13 19 22 12 13 5 13 19"></polygon>
               <polygon points="2 19 11 12 2 5 2 19"></polygon>
             </svg>
           </button>
         </div>
       </section>
-      <notice
-        class="absolute bottom-[3rem] hidden 2xl:left-[8rem] 2xl:bottom-[3rem] 2xl:flex"
-      >
-        <p class="text-[10px] text-yellow-100">
-          Music Copyright © NINTENDO,YMO. All Rights Reserved.
-        </p>
-      </notice>
     </main>
     <notice class="flex bg-yellow-500 pl-[2rem] pb-[2rem] 2xl:hidden">
       <p class="text-[10px] text-yellow-100">
@@ -173,7 +120,7 @@
   </div>
 </template>
 <script setup>
-import { ref, watch, computed } from "vue";
+import { ref, watch } from "vue";
 import city_png from "/src/assets/City.png";
 import city_mp3 from "/src/assets/City.mp3";
 import burgerKing_png from "/src/assets/BurgerKing.png";
@@ -258,6 +205,7 @@ const songList = ref([
     alt: "Rydeen.png",
   },
 ]);
+
 const currentSong = ref(songList.value[0]);
 const isPlaying = ref(false);
 
@@ -326,10 +274,11 @@ watch(isPlaying, (newVal) => {
 });
 
 loadSong();
+
 </script>
 
 <style scoped>
-.nes-container.with-title > .title {
+.nes-container.with-title>.title {
   display: table;
   padding: 0 0.5rem;
   margin: -1.8rem 0 1rem;
@@ -343,13 +292,14 @@ loadSong();
 }
 
 .album-cover.is-playing img {
-  animation: spin 2s linear infinite;
+  animation: spin 3s linear infinite;
 }
 
 @keyframes spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
